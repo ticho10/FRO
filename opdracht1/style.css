@@ -1,0 +1,167 @@
+body{
+  background: lightgrey;
+  margin: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+nav{
+  background-color: red;
+  border: 1px solid black;
+}
+
+.nav--menuSwitch{
+  color: white;
+  background: #000;
+  cursor: pointer;
+  padding: 1em;
+  display: block;
+  text-align: right;
+}
+
+.nav--menuToggle{
+  display: none;
+}
+
+/*  Toggle */
+.nav--menuToggle:checked ~ ul a {
+  /*Breng de eigenschappen terug*/
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  transition: all 1s ease-out;
+  border-bottom: 1px dashed #eee;
+}
+/*Verberg menu*/
+.nav--menuToggle:checked ~ .nav--menuSwitch .fa-times{
+  display: block;
+}
+/*Toon menu*/
+.nav--menuToggle:checked ~ .nav--menuSwitch .fa-bars{
+  display: none;
+}
+
+/* herberg de fa-times*/
+.fa-times{
+  display: none
+}
+
+.nav--menuSwitch .fa-times{
+  display: none
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav a{
+  display: block;
+  color: #eee;
+  text-decoration: none;
+  padding: 1em;
+  /*verberg het menu*/
+  border-bottom: 0 dashed #eee;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  transition: all 1s ease-out;
+}
+
+nav a:hover{
+  color: #929;
+  background: rgba(20,10,5,0.5);
+}
+
+.nav__subMenu ul{
+  padding-left: .5em;
+  border-left: 5px double #eee;
+}
+
+/*Het nav__subMenu verbergen*/
+.nav .nav__subMenu li a {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  transition: all 0.5s ease-out;
+  border-bottom-width: 0;
+}
+/*nav__subMenu tonen bij een hover van .nav__subMenu*/
+.nav .nav__subMenu:hover li a {
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom-width: 1px;
+}
+
+.nav__subMenu>a{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.nav__subMenu > a::after{
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  content: "\f078";
+}
+
+.nav__subMenu:hover > a::after{
+  content: '\f0dd';
+  font-size: 20px;
+}
+
+main{
+  padding: 1em;
+}
+footer{
+  padding: 1em;
+  background: #333;
+  color: #dddd;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+img{
+  margin-top: 10em;
+  margin-bottom: 7em;
+  margin-left: 2em;
+}
+
+/*opmaak bredere viewporrt*/
+@media screen and (min-width: 40em){
+  nav>ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em,1fr));
+  }
+  /*Toggle label verwijderen*/
+  .nav--menuSwitch{
+    display: none;
+  }
+  nav a{
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+  }
+  .nav__subMenu{
+    position: relative;
+  }
+  .nav__subMenu ul{
+    position: absolute;
+    padding: 0;
+    border-left: 0;
+    width: 100%;
+  }
+  .nav__subMenu a {
+    background: red;
+  }
+  /*een lijntje links van de items van het hoofd menu behalve de eerste*/
+  nav>ul>li:not(:first-child)>a{
+    border-left: 2px solid #eee;
+  }
+}

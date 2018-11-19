@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Smooth scoller horizontaal</title>
+
+    <style>
+        .hor{
+            overflow-y: hidden;
+        }
+
+
+
+        main{
+            width: 500vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        section{
+            overflow-y: hidden;
+            height: 100vh;
+        }
+        #geel{
+            overflow-y: scroll;
+            display: block;
+        }
+    </style>
+
+</head>
+<body class="hor">
+<nav>
+    <ul>
+        <li><a href="#rood">Rood</a></li>
+        <li><a href="#geel">Geel</a></li>
+        <li><a href="#groen">Groen</a></li>
+        <li><a href="#blauw">Blauw</a></li>
+        <li><a href="#purper">Purper</a></li>
+    </ul>
+</nav>
+<main>
+    <section id="rood">
+        <h2>De rode pagina</h2>
+        <p>kleur</p>
+        <br>
+        <p>EEN LINK NAAR <a href="index.html"> DE VERTICALE VERSIE</a>.</p>
+
+
+    </section>
+
+    <section id="geel">
+        <h2>De Gele pagina</h2>
+        <p>kleur</p>
+        <p>
+            <img class="images" src="MOIEKIP.png" alt="">
+            <img class="images" src="MOIEKIP.png" alt="">
+        </p>
+    </section>
+
+    <section id="groen">
+        <h2>De groene pagina</h2>
+        <p>kleur</p>
+    </section>
+
+    <section id="blauw">
+        <h2>De blauwe pagina</h2>
+        <p>kleur</p>
+        <a href="http://validator.w3.org/check?uri=referer" target="_blank">
+            <img src="https://blanken5.home.xs4all.nl/afb/valid-html5-blue.png" alt="Valide HTML5"></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue.gif" alt="Valide CSS">
+        </a>
+    </section>
+
+    <section id="purper">
+        <h2>De purpere pagina</h2>
+        <p>kleur</p>
+    </section>
+</main>
+</body>
+</html>
