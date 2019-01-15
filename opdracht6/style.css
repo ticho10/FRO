@@ -1,0 +1,35 @@
+body{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr, auto, auto, 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1em;
+  overflow-x: hidden;
+}
+
+#knop{
+  grid-column: 2/3;
+
+}
+
+.vlakje{
+  grid-column: 3/4;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: dodgerblue;
+  width: 5em;
+  height: 5em;
+  transition: 3s cubic-bezier(.15,-1.11,1,1.69) 2s;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  border-radius: 100px;
+}
+.vlakje--schuif-uit{
+  width: 10em;
+  height: 10em;
+  transform: rotate(360deg) translate(20em, 20em);
+}
